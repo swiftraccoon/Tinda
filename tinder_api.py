@@ -13,24 +13,23 @@ headers = {
 }
 
 
-
 def get_recommendations():
-    '''
+    """
     Returns a list of users that you can swipe on
-    '''
+    """
     try:
         r = requests.get('https://api.gotinder.com/user/recs', headers=headers)
         return r.json()
     except requests.exceptions.RequestException as e:
-        print("Something went wrong with getting recomendations:", e)
+        print("Something went wrong with getting recommendations:", e)
 
 
 def get_updates(last_activity_date=""):
-    '''
+    """
     Returns all updates since the given activity date.
     The last activity date is defaulted at the beginning of time.
     Format for last_activity_date: "2017-07-09T10:28:13.392Z"
-    '''
+    """
     try:
         url = config.host + '/updates'
         r = requests.post(url,
@@ -42,9 +41,9 @@ def get_updates(last_activity_date=""):
 
 
 def get_self():
-    '''
+    """
     Returns your own profile data
-    '''
+    """
     try:
         url = config.host + '/profile'
         r = requests.get(url, headers=headers)
@@ -54,7 +53,7 @@ def get_self():
 
 
 def change_preferences(**kwargs):
-    '''
+    """
     ex: change_preferences(age_filter_min=30, gender=0)
     kwargs: a dictionary - whose keys become separate keyword arguments and the values become values of these arguments
     age_filter_min: 18..46
@@ -64,7 +63,7 @@ def change_preferences(**kwargs):
     distance_filter: 1..100
     discoverable: true | false
     {"photo_optimizer_enabled":false}
-    '''
+    """
     try:
         url = config.host + '/profile'
         r = requests.post(url, headers=headers, data=json.dumps(kwargs))
@@ -74,12 +73,12 @@ def change_preferences(**kwargs):
 
 
 def get_meta():
-    '''
+    """
     Returns meta data on yourself. Including the following keys:
     ['globals', 'client_resources', 'versions', 'purchases',
     'status', 'groups', 'products', 'rating', 'tutorials',
     'travel', 'notifications', 'user']
-    '''
+    """
     try:
         url = config.host + '/meta'
         r = requests.get(url, headers=headers)
@@ -87,17 +86,19 @@ def get_meta():
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not get your metadata:", e)
 
+
 def update_location(lat, lon):
-    '''
+    """
     Updates your location to the given float inputs
     Note: Requires a passport / Tinder Plus
-    '''
+    """
     try:
         url = config.host + '/passport/user/travel'
         r = requests.post(url, headers=headers, data=json.dumps({"lat": lat, "lon": lon}))
         return r.json()
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not update your location:", e)
+
 
 def reset_real_location():
     try:
@@ -109,9 +110,9 @@ def reset_real_location():
 
 
 def get_recs_v2():
-    '''
+    """
     This works more consistently then the normal get_recommendations becuase it seeems to check new location
-    '''
+    """
     try:
         url = config.host + '/v2/recs/core?locale=en-US'
         r = requests.get(url, headers=headers)
@@ -119,10 +120,11 @@ def get_recs_v2():
     except Exception as e:
         print('excepted')
 
+
 def set_webprofileusername(username):
-    '''
+    """
     Sets the username for the webprofile: https://www.gotinder.com/@YOURUSERNAME
-    '''
+    """
     try:
         url = config.host + '/profile/username'
         r = requests.put(url, headers=headers,
@@ -131,10 +133,11 @@ def set_webprofileusername(username):
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not set webprofile username:", e)
 
+
 def reset_webprofileusername(username):
-    '''
+    """
     Resets the username for the webprofile
-    '''
+    """
     try:
         url = config.host + '/profile/username'
         r = requests.delete(url, headers=headers)
@@ -142,10 +145,11 @@ def reset_webprofileusername(username):
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not delete webprofile username:", e)
 
+
 def get_person(id):
-    '''
+    """
     Gets a user's profile via their id
-    '''
+    """
     try:
         url = config.host + '/user/%s' % id
         r = requests.get(url, headers=headers)
@@ -192,12 +196,12 @@ def dislike(person_id):
 
 
 def report(person_id, cause, explanation=''):
-    '''
+    """
     There are three options for cause:
         0 : Other and requires an explanation
         1 : Feels like spam and no explanation
         4 : Inappropriate Photos and no explanation
-    '''
+    """
     try:
         url = config.host + '/report/%s' % person_id
         r = requests.post(url, headers=headers, data={
@@ -214,6 +218,7 @@ def match_info(match_id):
         return r.json()
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not get your match info:", e)
+
 
 def all_matches():
     try:
