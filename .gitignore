@@ -3,6 +3,8 @@ config.py
 idea/
 .idea\
 idea\
+.css/
+.vendor/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
