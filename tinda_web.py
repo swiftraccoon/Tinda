@@ -7,8 +7,8 @@ web.config.debug = False
 render = web.template.render('templates', base='index')
 
 urls = (
-  '/(.*)', 'index'
-  '/css', '/css'
+  '/(.*)', 'index',
+  '/css', '/css',
 )
 
 
