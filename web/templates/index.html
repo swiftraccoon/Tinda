@@ -13,7 +13,6 @@ $code:
         "X-Auth-Token": tinder_token,
     }
 
-
     def get_self():
     try:
         url = config.host + '/profile'
@@ -21,7 +20,6 @@ $code:
         return r.json()
     except requests.exceptions.RequestException as e:
         print("Something went wrong. Could not get your data:", e)
-
 
     def get_meta():
         try:
