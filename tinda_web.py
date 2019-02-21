@@ -8,6 +8,7 @@ render = web.template.render('templates', base='index')
 
 urls = (
   '/(.*)', 'index'
+  '/css', '/css'
 )
 
 
