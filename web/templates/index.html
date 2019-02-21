@@ -1,35 +1,35 @@
 $def with (tinder_token)
 
 $code:
-    import json
-    import config
-    import requests
+	import json
+	import config
+	import requests
 
-    headers = {
-        'app_version': '6.9.4',
-        'platform': 'ios',
-        "content-type": "application/json",
-        "User-agent": "Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)",
-    	"X-Auth-Token": tinder_token,
-    }
-
-
-    def get_self():
-    try:
-        url = config.host + '/profile'
-        r = requests.get(url, headers=headers)
-        return r.json()
-    except requests.exceptions.RequestException as e:
-        print("Something went wrong. Could not get your data:", e)
+	headers = {
+		'app_version': '6.9.4',
+		'platform': 'ios',
+		"content-type": "application/json",
+		"User-agent": "Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)",
+		"X-Auth-Token": tinder_token,
+	}
 
 
-    def get_meta():
-        try:
-            url = config.host + '/meta'
-            r = requests.get(url, headers=headers)
-            return r.json()
-        except requests.exceptions.RequestException as e:
-            print("Something went wrong. Could not get your metadata:", e)
+	def get_self():
+	try:
+		url = config.host + '/profile'
+		r = requests.get(url, headers=headers)
+		return r.json()
+	except requests.exceptions.RequestException as e:
+		print("Something went wrong. Could not get your data:", e)
+
+
+	def get_meta():
+		try:
+			url = config.host + '/meta'
+			r = requests.get(url, headers=headers)
+			return r.json()
+		except requests.exceptions.RequestException as e:
+			print("Something went wrong. Could not get your metadata:", e)
 
 
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,25 +37,25 @@ $code:
 <link href="css/sb-admin-2.min.css" rel="stylesheet">
 <!-- Dropdown Card Example -->
 <div class="card shadow mb-4">
-    <!-- Card Header - Dropdown -->
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">$get_self['email']</h6>
-        <div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-            </a>
-        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-            <div class="dropdown-header">Header:</div>
-            <a class="dropdown-item" href="#">Change Preferences</a>
-            <a class="dropdown-item" href="#">Update Location</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">New Token</a>
-        </div>
-     </div>
-    </div>
-    <!-- Card Body -->
-    <div class="card-body">
-        $get_self['bio']
-    </div>
+	<!-- Card Header - Dropdown -->
+	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+		<h6 class="m-0 font-weight-bold text-primary">$get_self['email']</h6>
+		<div class="dropdown no-arrow">
+			<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+			   aria-haspopup="true" aria-expanded="false">
+				<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+			</a>
+		<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+			<div class="dropdown-header">Header:</div>
+			<a class="dropdown-item" href="#">Change Preferences</a>
+			<a class="dropdown-item" href="#">Update Location</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">New Token</a>
+		</div>
+	 </div>
+	</div>
+	<!-- Card Body -->
+	<div class="card-body">
+		$get_self['bio']
+	</div>
 </div>

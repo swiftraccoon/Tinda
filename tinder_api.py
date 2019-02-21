@@ -9,7 +9,7 @@ headers = {
     'platform': 'ios',
     "content-type": "application/json",
     "User-agent": "Tinder/7.5.3 (iPhone; iOS 10.3.2; Scale/2.00)",
-	"X-Auth-Token": config.tinder_token,
+    "X-Auth-Token": config.tinder_token,
 }
 
 
