@@ -12,9 +12,9 @@ urls = (
 
 
 class index:
-    def GET(self, tinder_token):
+    def GET(self):
         self_profile = tinder_api.get_self()
-        return render.index(self_profile, tinder_token)
+        return render.index(self_profile)
 
 
 app = web.application(urls, globals())
