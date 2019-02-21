@@ -4,9 +4,7 @@ from datetime import date, datetime
 from random import random
 from time import sleep
 
-import config
-import tinder_api as api
-
+from web import tinder_api as api
 
 """
 This file collects important data on your matches,

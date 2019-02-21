@@ -1,7 +1,7 @@
 # http://webpy.org/docs/0.3/tutorial
 
 import web
-import tinder_api
+from web import tinder_api
 
 web.config.debug = False
 render = web.template.render('templates', base='index')

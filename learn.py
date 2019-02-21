@@ -7,7 +7,7 @@ import sys
 import wget
 
 import request_model as model
-import tinder_api as ti
+from web import tinder_api as ti
 from tinder_token import get_access_token
 
 
