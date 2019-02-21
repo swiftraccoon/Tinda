@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f013c1c1-d83c-4c4b-9a7a-672b89adbdd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tinda_web.py" beforeDir="false" afterPath="$PROJECT_DIR$/tinda_web.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tinda_web.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="238">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding>
                 <element signature="e#38#48#0" expanded="true" />
               </folding>
@@ -301,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tinda_web.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="238">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding>
             <element signature="e#38#48#0" expanded="true" />
           </folding>

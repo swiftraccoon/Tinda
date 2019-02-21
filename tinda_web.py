@@ -12,7 +12,7 @@ urls = (
 
 
 class index:
-    def GET(self):
+    def GET(self, self_profile):
         self_profile = tinder_api.get_self()
         return render.index(self_profile)
 
