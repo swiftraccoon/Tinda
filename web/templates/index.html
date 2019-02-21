@@ -18,7 +18,7 @@ $code:
             url = config.host + '/profile'
             r = requests.get(url, headers=headers)
             return r.json()
-      except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException as e:
             print("Something went wrong. Could not get your data:", e)
 
     def get_meta():
