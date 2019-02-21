@@ -2,6 +2,7 @@
 
 import web
 
+web.config.debug = False
 render = web.template.render('templates/')
 
 urls = (
